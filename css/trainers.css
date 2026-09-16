@@ -1,0 +1,270 @@
+@font-face {
+    font-family: "Montserrat Black";
+    src: url("../fonts/static/Montserrat-Black.ttf") format("truetype");
+}
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body {
+    font-family: "Montserrat Black", sans-serif;
+    background: #0f0f0f;
+    color: white;
+    line-height: 1.6;
+}
+
+/* CONTAINER */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* HERO */
+.trainers-hero {
+    height: 60vh;
+    background: url('../images/about-bg.jpg') center/cover no-repeat;
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+/* OVERLAY */
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+}
+
+/* HERO CONTENT */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: 58px;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    color: #ddd;
+}
+
+/* SECTION */
+.trainers-section {
+    padding: 80px 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+/* SCREEN READER ONLY */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+
+    padding: 0;
+    margin: -1px;
+
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+
+    white-space: nowrap;
+    border: 0;
+}
+
+/* TRAINER CARD */
+.trainer-box {
+    display: flex;
+    align-items: stretch;
+    gap: 30px;
+
+    background: linear-gradient(145deg, #1a1a1a, #151515);
+
+    border-radius: 18px;
+    overflow: hidden;
+
+    transition: all 0.35s ease;
+
+    min-height: 300px;
+}
+
+/* HOVER */
+.trainer-box:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 30px rgba(0, 188, 212, 0.22);
+}
+
+/* REVERSE */
+.reverse {
+    flex-direction: row-reverse;
+}
+
+/* IMAGE */
+.trainer-image {
+    flex: 0 0 260px;
+    margin: 0;
+
+    overflow: hidden;
+    background: #111;
+}
+
+/* IMAGE SIZE FIX */
+.trainer-image img {
+    width: 100%;
+    height: 260px;
+
+    object-fit: cover;
+    display: block;
+}
+
+/* FIGCAPTION */
+.trainer-image figcaption {
+    background: #111;
+    color: #bdbdbd;
+
+    font-size: 12px;
+    padding: 8px;
+
+    text-align: center;
+    font-style: italic;
+}
+
+/* INFO */
+.trainer-info {
+    flex: 1;
+
+    padding: 22px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+/* NAME */
+.trainer-info h3 {
+    font-size: 26px;
+    color: white;
+}
+
+/* ROLE */
+.trainer-info span {
+    color: rgb(0, 188, 212);
+    font-size: 15px;
+}
+
+/* DESCRIPTION */
+.trainer-info p {
+    color: #cfcfcf;
+    font-size: 14px;
+
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* DETAILS */
+.trainer-details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 10px;
+    margin-top: 8px;
+}
+
+/* DETAIL CARD */
+.trainer-details div {
+    background: #222;
+
+    padding: 10px;
+    border-radius: 10px;
+
+    transition: 0.3s;
+}
+
+/* HOVER */
+.trainer-details div:hover {
+    background: #2a2a2a;
+}
+
+/* DETAIL TITLE */
+.trainer-details h4 {
+    color: rgb(0, 188, 212);
+
+    font-size: 12px;
+    margin-bottom: 4px;
+}
+
+/* DETAIL TEXT */
+.trainer-details p {
+    font-size: 12px;
+    color: #ddd;
+}
+
+@media (max-width: 900px) {
+
+    .trainer-box,
+    .reverse {
+        flex-direction: column;
+    }
+
+    .trainer-image {
+        width: 100%;
+        flex: none;
+    }
+
+    .trainer-image img {
+        width: 100%;
+        height: 240px;
+    }
+
+    .trainer-details {
+        grid-template-columns: 1fr;
+    }
+
+    .trainer-info {
+        padding: 20px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .hero-content h1 {
+        font-size: 40px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    .trainer-info h3 {
+        font-size: 22px;
+    }
+
+    .trainer-info span {
+        font-size: 14px;
+    }
+
+    .trainer-box {
+        gap: 20px;
+    }
+
+    .trainer-image img {
+        height: 220px;
+    }
+}

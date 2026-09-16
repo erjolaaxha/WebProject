@@ -1,0 +1,479 @@
+@font-face {
+    font-family: "Montserrat Black";
+    src: url("../fonts/static/Montserrat-Black.ttf") format("truetype");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Montserrat Black", sans-serif;
+    background: #0f0f0f;
+    color: white;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* HERO */
+.matje-hero {
+    height: 50vh;
+    background: url('../images/classes-bg.jpg') center/cover;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.72);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    color: #ddd;
+    font-size: 17px;
+}
+
+/* WALL */
+.matje-wall {
+    text-align: center;
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+}
+
+.matje-wall>i {
+    font-size: 60px;
+    color: rgb(0, 188, 212);
+}
+
+.matje-wall h2 {
+    font-size: 28px;
+}
+
+.matje-wall p {
+    color: #aaa;
+}
+
+.wall-btns {
+    display: flex;
+    gap: 16px;
+    margin-top: 10px;
+}
+
+.btn-primary {
+    background: rgb(0, 188, 212);
+    color: black;
+    text-decoration: none;
+    padding: 13px 30px;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: transform .3s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+}
+
+.btn-outline-c {
+    border: 2px solid rgb(0, 188, 212);
+    color: rgb(0, 188, 212);
+    text-decoration: none;
+    padding: 11px 28px;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: background .3s;
+}
+
+.btn-outline-c:hover {
+    background: rgba(0, 188, 212, .1);
+}
+
+/* MAIN */
+.matje-main {
+    padding: 60px 0 80px;
+}
+
+/* GRID */
+.matje-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+    align-items: start;
+}
+
+/* FORM BOX */
+.matje-form-box {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 18px;
+    padding: 35px 30px;
+}
+
+.matje-form-box h2,
+.matje-stats-box h2,
+.matje-history h2 {
+    font-size: 20px;
+    color: rgb(0, 188, 212);
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #2a2a2a;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 13px;
+    color: #ccc;
+    margin-bottom: 5px;
+    margin-top: 12px;
+}
+
+.req {
+    color: rgb(0, 188, 212);
+}
+
+.input-wrap {
+    position: relative;
+}
+
+.input-wrap>i {
+    position: absolute;
+    left: 13px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    font-size: 14px;
+    pointer-events: none;
+}
+
+.input-wrap input {
+    width: 100%;
+    padding: 11px 12px 11px 38px;
+    background: #2b2b2b;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    color: white;
+    font-size: 14px;
+    transition: border-color .3s, box-shadow .3s;
+}
+
+.input-wrap input:focus {
+    outline: none;
+    border-color: rgb(0, 188, 212);
+    box-shadow: 0 0 10px rgba(0, 188, 212, .3);
+}
+
+input[type="date"],
+input[type="number"] {
+    color-scheme: dark;
+}
+
+.m-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.m-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.err {
+    color: #ff5555;
+    font-size: 12px;
+    margin-top: 3px;
+    min-height: 14px;
+}
+
+/* BMI RESULT */
+.bmi-result-box {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: rgba(0, 188, 212, .08);
+    border: 1px solid rgba(0, 188, 212, .25);
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-top: 14px;
+}
+
+.bmi-label {
+    color: #aaa;
+    font-size: 13px;
+}
+
+.bmi-value {
+    font-size: 26px;
+    font-weight: bold;
+    color: rgb(0, 188, 212);
+}
+
+.bmi-cat {
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.bmi-normal {
+    background: rgba(0, 200, 100, .15);
+    color: #00c864;
+}
+
+.bmi-mbipeshe {
+    background: rgba(255, 193, 7, .15);
+    color: #ffc107;
+}
+
+.bmi-obez {
+    background: rgba(255, 85, 85, .15);
+    color: #ff5555;
+}
+
+.bmi-nenpeshe {
+    background: rgba(100, 100, 255, .15);
+    color: #8888ff;
+}
+
+.btn-submit {
+    margin-top: 20px;
+    padding: 13px;
+    background: rgb(0, 188, 212);
+    border: none;
+    border-radius: 10px;
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: transform .3s, box-shadow .3s;
+}
+
+.btn-submit:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(0, 188, 212, .4);
+}
+
+/* STATS BOX */
+.matje-stats-box {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 18px;
+    padding: 35px 30px;
+}
+
+.stat-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 24px;
+}
+
+.stat-mini-card {
+    background: #222;
+    border: 1px solid #2e2e2e;
+    border-radius: 12px;
+    padding: 18px 14px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    transition: border-color .3s;
+}
+
+.stat-mini-card:hover {
+    border-color: rgba(0, 188, 212, .4);
+}
+
+.stat-mini-card>i {
+    font-size: 26px;
+    color: rgb(0, 188, 212);
+}
+
+.sc-label {
+    font-size: 11px;
+    color: #777;
+    text-transform: uppercase;
+    letter-spacing: .8px;
+    margin-bottom: 4px;
+}
+
+.sc-val {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* PROGRESS */
+.progress-section {
+    margin-top: 10px;
+}
+
+.progress-section h3 {
+    font-size: 14px;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+.progress-row {
+    background: #222;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 14px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.prog-up {
+    color: #00c864;
+}
+
+.prog-down {
+    color: #ff5555;
+}
+
+.prog-same {
+    color: #888;
+}
+
+.matje-count-note {
+    font-size: 13px;
+    color: #555;
+    margin-top: 14px;
+    text-align: center;
+}
+
+/* HISTORY */
+.matje-history {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 18px;
+    padding: 35px 30px;
+}
+
+.history-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.history-table th {
+    text-align: left;
+    padding: 10px 14px;
+    color: rgb(0, 188, 212);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: .8px;
+    border-bottom: 1px solid #2a2a2a;
+}
+
+.history-table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid #1e1e1e;
+    color: #ccc;
+}
+
+.history-table tr:hover td {
+    background: #1e1e1e;
+}
+
+.history-table .bmi-badge {
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.del-matje-btn {
+    background: none;
+    border: 1px solid #ff5555;
+    color: #ff5555;
+    padding: 5px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background .3s;
+}
+
+.del-matje-btn:hover {
+    background: #ff5555;
+    color: white;
+}
+
+.no-rez-msg {
+    color: #555;
+    text-align: center;
+    padding: 30px 0;
+    font-size: 15px;
+}
+
+/* CHART */
+.chart-box {
+    margin-top: 40px;
+    background: rgba(26, 26, 26, 0.88);
+    backdrop-filter: blur(10px);
+
+
+    border-radius: 15px;
+    padding: 20px;
+
+    border: 1px solid rgba(0, 188, 212, 0.25);
+    box-shadow: 0 0 25px rgba(0, 188, 212, 0.15);
+
+    color: white;
+}
+
+/* RESPONSIVE */
+@media (max-width: 850px) {
+    .matje-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-cards {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .m-row {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-content h1 {
+        font-size: 32px;
+    }
+}

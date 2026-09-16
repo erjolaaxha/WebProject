@@ -1,0 +1,117 @@
+.floating-widget {
+  position: fixed;
+  top: 120px;
+  right: 20px;
+
+  width: 240px;
+
+  background: rgba(26, 26, 26, 0.88);
+  color: white;
+
+  border-radius: 18px;
+  z-index: 999999;
+
+  box-shadow: 0 10px 30px rgb(0, 188, 212);
+
+  overflow: hidden;
+}
+
+/* HEADER */
+.widget-header {
+  background: rgb(0, 188, 212);
+  color: black;
+
+
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+
+
+  cursor: pointer;
+  user-select: none;
+
+  transition: 0.3s;
+}
+
+.widget-header:hover {
+  background: rgb(0, 160, 180);
+}
+
+/* BODY */
+.widget-body {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* INPUTS */
+.floating-widget input,
+.floating-widget select {
+  width: 100%;
+  margin: 5px 0;
+  padding: 7px;
+
+  border-radius: 8px;
+  border: 1px solid transparent;
+
+  background: #2a2a2a;
+  color: white;
+
+  outline: none;
+
+  transition: 0.3s;
+
+}
+
+.floating-widget input:focus,
+.floating-widget select:focus {
+  border-color: rgb(0, 188, 212);
+  box-shadow: 0 0 10px rgba(0, 188, 212, 0.25);
+}
+
+/* BUTTON */
+.floating-widget button {
+  width: 100%;
+  margin-top: 8px;
+  padding: 8px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: rgb(0, 188, 212);
+  color: rgb(0, 0, 0);
+
+  font-weight: bold;
+  cursor: pointer;
+
+  transition: 0.3s;
+
+}
+
+.floating-widget button:hover {
+  background: rgb(0, 160, 180);
+  transform: translateY(-2px);
+}
+
+/* RESULT */
+#result {
+  color: rgb(0, 188, 212);
+  font-weight: bold;
+}
+
+
+.floating-widget.collapsed {
+  height: auto;
+}
+
+.floating-widget.collapsed .widget-body {
+  display: none;
+}
+
+@media (max-width: 500px) {
+  .floating-widget {
+    width: 220px;
+    right: 10px;
+  }
+}

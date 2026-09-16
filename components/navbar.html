@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="sq">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar | EliteGym</title>
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- CSS I NAVBAR -->
+    <link rel="stylesheet" href="css/navbar.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <nav class="navbar-container">
+
+            <!-- LOGO -->
+            <a href="index.html" class="logo">
+                <img src="images/logogym.png" alt="Elite Gym Logo">
+            </a>
+
+            <!-- NAVIGIMI -->
+            <ul class="nav-links">
+                <li><a href="index.html">Kreu</a></li>
+                <li><a href="about.html">Rreth Nesh</a></li>
+                <li><a href="membership.html">Paketat</a></li>
+                <li><a href="classes.html">Klasat</a></li>
+                <li><a href="trainers.html">Trajnerët</a></li>
+                <li><a href="bmiCal.html">BMI</a></li>
+                <li><a href="contact.html">Kontakt</a></li>
+
+                <!-- SEARCH -->
+                <li class="nav-search-li">
+                    <search role="search" aria-label="Kërko në website">
+                        <div class="search-wrap">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="search" id="navSearch" placeholder="Kërko..." autocomplete="off" tabindex="10"
+                                aria-label="Kërko klasë ose faqe">
+                            <div class="search-dropdown" id="searchDropdown"></div>
+                        </div>
+                    </search>
+                </li>
+
+                <!-- PROFILI -->
+                <li>
+                    <a href="login.html" class="profile-icon" title="Kyçu">
+                        <i class="fa-solid fa-user"></i>
+                    </a>
+                </li>
+            </ul>
+
+            <!-- MOBILE MENU -->
+            <button class="nav-toggle" aria-label="Hap menunë" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </nav>
+    </header>
+
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="sq">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator | EliteGym</title>
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/bmiCal.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <div id="navbar"></div>
+
+    <!-- HERO -->
+    <section class="bmi-hero">
+        <div class="hero-content">
+            <h1>BMI Calculator</h1>
+            <p>
+                Llogarit BMI-në tënde dhe zbulo nëse pesha jote
+                është në nivel optimal për një jetë më të shëndetshme.
+            </p>
+        </div>
+    </section>
+
+    <!-- BMI SECTION -->
+    <section class="bmi-section">
+        <div class="bmi-container">
+
+            <h2>Llogarit BMI-në</h2>
+
+            <!-- FORM -->
+            <form id="bmiForm" name="bmiForm" novalidate>
+
+                <!-- GJATESIA -->
+                <div class="input-group">
+                    <label for="height">Gjatësia (cm)</label>
+                    <input type="number" id="height" name="height" placeholder="Shkruaj gjatësinë" min="50" max="250"
+                        tabindex="1" autofocus required>
+                </div>
+
+                <!-- PESHA -->
+                <div class="input-group">
+                    <label for="weight">Pesha (kg)</label>
+                    <input type="number" id="weight" name="weight" placeholder="Shkruaj peshën" min="20" max="300"
+                        tabindex="2" required>
+                </div>
+
+                <!-- ERROR -->
+                <p class="error-msg" id="bmi-error" aria-live="polite"></p>
+
+                <!-- BUTTON -->
+                <div class="bmi-actions">
+
+                    <button type="button" onclick="calculateBMI()" tabindex="3" name="calculateBtn">
+                        Llogarit
+                    </button>
+
+                </div>
+
+            </form>
+
+            <!-- RESULT -->
+            <div class="result" id="bmi-result-box" aria-live="polite">
+
+                <h2 id="bmi-result">--</h2>
+                <p id="bmi-status">Statusi juaj do të shfaqet këtu</p>
+
+                <!-- SCALE -->
+                <div class="bmi-scale">
+                    <div class="scale-bar">
+                        <div class="scale-indicator" id="bmi-indicator"></div>
+                    </div>
+
+                    <div class="scale-labels">
+                        <span>Nën peshë</span>
+                        <span>Normal</span>
+                        <span>Mbi peshë</span>
+                        <span>Obez</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <div id="footer"></div>
+
+    <!-- JS -->
+    <script src="js/bmiCal.js"></script>
+    <script src="js/loadComponents.js"></script>
+
+</body>
+
+</html>

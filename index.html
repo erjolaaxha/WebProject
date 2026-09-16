@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="sq">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EliteGym</title>
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/widget.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <div id="navbar"></div>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+
+
+            <h1 id="heroTitle">Transformo trupin tënd</h1>
+            <p id="heroSubtitle">Palestër moderne me trajnerë profesionistë dhe pajisje të teknologjisë së fundit.</p>
+            <div class="hero-buttons" id="heroButtons">
+                <a href="membership.html" class="btn">Shiko paketat</a>
+                <a href="register.html" class="btn btn-outline">Regjistrohu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Baneri per userin e loguar (fshihet nese nuk eshte i loguar) -->
+    <div class="user-welcome-bar" id="userWelcomeBar" style="display:none;">
+        <div class="container">
+            <div class="welcome-inner">
+                <span id="welcomeMsg"></span>
+                <div class="welcome-actions">
+                    <a href="dashboard.html"><i class="fa-solid fa-gauge"></i> Dashboard</a>
+                    <a href="rezervime.html"><i class="fa-solid fa-calendar-check"></i> Rezervimet e mia</a>
+                    <a href="bmiCal.html"><i class="fa-solid fa-weight-scale"></i> BMI Calculator</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- STATS -->
+    <section class="stats container">
+        <div class="stat-box">
+            <h2>500+</h2>
+            <p>Anëtarë</p>
+        </div>
+        <div class="stat-box">
+            <h2>20+</h2>
+            <p>Trajnerë</p>
+        </div>
+        <div class="stat-box">
+            <h2>10+</h2>
+            <p>Vite eksperiencë</p>
+        </div>
+        <div class="stat-box">
+            <h2>100%</h2>
+            <p>Motivim</p>
+        </div>
+    </section>
+
+    <!-- ABOUT US -->
+    <section class="about container">
+        <div class="about-wrapper">
+            <div class="about-text">
+                <h2>Pse EliteGym?</h2>
+                <p>
+                    EliteGym është një palestër moderne që kombinon teknologjinë,
+                    trajnerë të certifikuar dhe programe të personalizuara për çdo klient.
+                </p>
+                <p>
+                    Ne fokusohemi në rezultate reale, motivim dhe një komunitet
+                    që të shtyn të përmirësohesh çdo ditë.
+                </p>
+                <a href="about.html" class="btn">Mëso më shumë</a>
+            </div>
+
+            <div class="about-features">
+                <div class="about-box">
+                    <i class="fa-solid fa-dumbbell"></i>
+                    <h3>Pajisje moderne</h3>
+                    <p>Teknologjia më e fundit për stërvitje efektive.</p>
+                </div>
+                <div class="about-box">
+                    <i class="fa-solid fa-user-check"></i>
+                    <h3>Trajnerë profesionalë</h3>
+                    <p>Staf i certifikuar që të udhëzon hap pas hapi.</p>
+                </div>
+                <div class="about-box">
+                    <i class="fa-solid fa-bolt"></i>
+                    <h3>Rezultate të shpejta</h3>
+                    <p>Programe të personalizuara për çdo trup.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CLASSES -->
+    <section class="classes container">
+        <h2 class="section-title">Klasat tona</h2>
+        <div class="class-grid">
+            <div class="class-card cardio">
+                <h3>Cardio</h3>
+            </div>
+            <div class="class-card strength">
+                <h3>Strength</h3>
+            </div>
+            <div class="class-card boxing">
+                <h3>Boxing</h3>
+            </div>
+            <div class="class-card yoga">
+                <h3>Yoga</h3>
+            </div>
+            <div class="class-card crossfit">
+                <h3>CrossFit</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="testimonials container">
+        <h2 class="section-title">Çfarë thonë klientët</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial">
+                <i class="fa-solid fa-quote-left quote"></i>
+                <p>"EliteGym më ndryshoi jetën time! Jam më në formë se kurrë."</p>
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <span class="name">Ardit</span>
+            </div>
+            <div class="testimonial">
+                <i class="fa-solid fa-quote-left quote"></i>
+                <p>"Trajnerë shumë profesionalë dhe ambiente moderne."</p>
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <span class="name">Elira</span>
+            </div>
+            <div class="testimonial">
+                <i class="fa-solid fa-quote-left quote"></i>
+                <p>"Motivimi që më duhej për të ndryshuar trupin tim!"</p>
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <span class="name">Kledi</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- WIDGET -->
+    <div id="macroWidget" class="floating-widget collapsed">
+
+        <div class="widget-header" id="widgetHeader">
+            Macro Calculator
+        </div>
+
+        <div class="widget-body">
+
+            <input id="weight" placeholder="Weight (kg)">
+            <input id="height" placeholder="Height (cm)">
+            <input id="age" placeholder="Age">
+
+            <select id="activity">
+                <option value="1.2">Low</option>
+                <option value="1.375">Light</option>
+                <option value="1.55">Moderate</option>
+                <option value="1.725">High</option>
+            </select>
+
+            <button onclick="calcMacros()">Calculate</button>
+
+            <div id="result"></div>
+
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div id="footer"></div>
+
+    <!-- JS -->
+    <script src="js/loadComponents.js"></script>
+    <script src="js/widget.js"></script>
+    <script src="js/home.js"></script>
+
+</body>
+
+</html>

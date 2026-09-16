@@ -1,0 +1,384 @@
+@font-face {
+    font-family: "Montserrat Black";
+    src: url("../fonts/static/Montserrat-Black.ttf") format("truetype");
+}
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Montserrat Black", sans-serif;
+    background: #111;
+    color: white;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* HERO */
+.hero {
+    height: 90vh;
+    background: url('../images/hero-bg.jpg') center top/cover no-repeat;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: 60px;
+}
+
+.hero-content p {
+    margin: 20px 0;
+    color: #ddd;
+}
+
+/* BUTTONS */
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.btn {
+    background: rgb(0, 188, 212);
+    color: black;
+    padding: 12px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+    background: rgb(0, 160, 180);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid rgb(0, 188, 212);
+    color: rgb(0, 188, 212);
+}
+
+.btn-outline:hover {
+    background: rgb(0, 188, 212);
+    color: black;
+}
+
+/* STATS */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    text-align: center;
+    padding: 60px 0;
+}
+
+.stat-box h2 {
+    font-size: 30px;
+    color: rgb(0, 188, 212);
+}
+
+/* ABOUT US */
+.about-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    padding: 80px 0;
+}
+
+.about-text h2 {
+    font-size: 40px;
+    color: rgb(0, 188, 212);
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    color: #ccc;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.about-features {
+    display: grid;
+    gap: 20px;
+}
+
+.about-box {
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 3px solid transparent;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.about-box:hover {
+    transform: translateX(8px);
+    border-left-color: rgb(0, 188, 212);
+}
+
+.about-box i {
+    font-size: 25px;
+    color: rgb(0, 188, 212);
+    margin-bottom: 10px;
+}
+
+.about-box h3 {
+    margin-bottom: 5px;
+}
+
+/* TITLES */
+.section-title {
+    text-align: center;
+    margin: 40px 0;
+    color: rgb(0, 188, 212);
+    text-transform: uppercase;
+}
+
+/* CLASSES */
+.class-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    padding: 20px 0;
+}
+
+.class-card {
+    height: 380px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: white;
+    font-weight: bold;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.4s;
+    cursor: pointer;
+}
+
+.class-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.28);
+    transition: background 0.4s;
+}
+
+.class-card:hover::before {
+    background: rgba(0, 188, 212, 0.2);
+}
+
+.class-card h3 {
+    position: relative;
+    z-index: 2;
+    font-size: 18px;
+}
+
+.class-card:hover {
+    transform: scale(1.05);
+}
+
+.cardio {
+    background-image: url('../images/cardio.jpg');
+}
+
+.strength {
+    background-image: url('../images/strength.jpg');
+}
+
+.boxing {
+    background-image: url('../images/boxing.jpg');
+}
+
+.yoga {
+    background-image: url('../images/yoga.jpg');
+}
+
+.crossfit {
+    background-image: url('../images/crossfit.jpg');
+}
+
+/* TESTIMONIALS */
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    padding: 50px 0;
+}
+
+.testimonial {
+    background: #1a1a1a;
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid transparent;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.testimonial:hover {
+    transform: translateY(-10px);
+    border-color: rgb(0, 188, 212);
+}
+
+.quote {
+    font-size: 28px;
+    color: rgb(0, 188, 212);
+    margin-bottom: 15px;
+}
+
+.testimonial p {
+    color: #ddd;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.stars {
+    color: gold;
+    margin-bottom: 15px;
+}
+
+.name {
+    display: block;
+    font-weight: bold;
+    color: rgb(0, 188, 212);
+}
+
+/* WELCOME BAR */
+.user-welcome-bar {
+    background: linear-gradient(90deg, #0a0a0a, #111);
+    border-bottom: 1px solid rgb(0, 188, 212);
+    padding: 12px 0;
+}
+
+.welcome-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    color: #ddd;
+    font-size: 15px;
+}
+
+.welcome-inner>span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: rgb(0, 188, 212);
+    font-weight: bold;
+}
+
+.welcome-inner>span i {
+    font-size: 20px;
+}
+
+.welcome-actions {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.welcome-actions a {
+    color: #bbb;
+    text-decoration: none;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border: 1px solid #333;
+    border-radius: 6px;
+    transition: all 0.3s;
+}
+
+.welcome-actions a:hover {
+    border-color: rgb(0, 188, 212);
+    color: rgb(0, 188, 212);
+}
+
+
+/* TABLET MODE */
+@media (max-width: 900px) {
+    .hero-content h1 {
+        font-size: 42px;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .about-wrapper {
+        grid-template-columns: 1fr;
+        padding: 50px 0;
+    }
+
+    .class-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .testimonial-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+/* MOBILE MODE */
+@media (max-width: 600px) {
+    .hero-content h1 {
+        font-size: 30px;
+    }
+
+    .hero {
+        height: 75vh;
+    }
+
+    .stats {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .class-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .class-card {
+        height: 200px;
+    }
+
+    .testimonial-grid {
+        grid-template-columns: 1fr;
+    }
+}

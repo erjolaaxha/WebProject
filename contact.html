@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="sq">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt | EliteGym</title>
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/contact.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <div id="navbar"></div>
+
+    <!-- HERO -->
+    <section class="contact-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Na kontakto</h1>
+            <p>Na shkruaj për çdo pyetje rreth trajnimeve, paketave ose orareve.</p>
+        </div>
+    </section>
+
+    <!-- INFO -->
+    <section class="info-section">
+        <div class="info-grid">
+
+            <div class="info-card">
+                <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+                <h2>Kontakt</h2>
+                <p>+355 69 123 4567</p>
+                <p>info@elitegym.com</p>
+            </div>
+
+            <div class="info-card">
+                <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <h2>Lokacioni</h2>
+                <p>Rruga Myslym Shyri, Tiranë</p>
+            </div>
+
+            <div class="info-card">
+                <div class="info-icon"><i class="fa-solid fa-share-nodes"></i></div>
+                <h2>Social Media</h2>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FORM -->
+    <section class="contact-section">
+
+        <div class="contact-card">
+
+            <h2>Dërgo mesazh</h2>
+
+            <form id="contactForm" name="contactForm" action="contact.php" method="POST" novalidate>
+
+                <!-- NAME -->
+                <label for="name">
+                    Emri <span class="required">*</span>
+                </label>
+
+                <div class="input-box">
+                    <i class="fa-solid fa-user"></i>
+
+                    <input type="text" id="name" name="name" placeholder="Shkruaj emrin" tabindex="1"
+                        autocomplete="name" autofocus required>
+                </div>
+
+                <p class="error" id="nameError" aria-live="polite"></p>
+
+                <!-- EMAIL -->
+                <label for="email">
+                    Email <span class="required">*</span>
+                </label>
+
+                <div class="input-box">
+                    <i class="fa-solid fa-envelope"></i>
+
+                    <input type="email" id="email" name="email" placeholder="Shkruaj email" tabindex="2"
+                        autocomplete="email" required>
+                </div>
+
+                <p class="error" id="emailError" aria-live="polite"></p>
+
+                <!-- SUBJECT -->
+                <label for="subject">
+                    Subjekti <span class="required">*</span>
+                </label>
+
+                <div class="input-box">
+                    <i class="fa-solid fa-pen"></i>
+
+                    <input type="text" id="subject" name="subject" placeholder="Subjekti" tabindex="3" required>
+                </div>
+
+                <p class="error" id="subjectError" aria-live="polite"></p>
+
+                <!-- MESSAGE -->
+                <label for="message">
+                    Mesazhi <span class="required">*</span>
+                </label>
+
+                <div class="textarea-box">
+
+                    <textarea id="message" name="message" placeholder="Shkruaj mesazhin..." tabindex="4"
+                        required></textarea>
+
+                </div>
+
+                <p class="error" id="messageError" aria-live="polite"></p>
+
+                <!-- BUTTON -->
+                <div class="form-actions">
+
+                    <button type="submit" class="btn" tabindex="5" formtarget="_self" name="sendMessageBtn">
+                        Dërgo mesazh
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </section>
+
+    <!-- MAP -->
+    <section class="map-section">
+        <h2>Lokacioni ynë</h2>
+        <div class="map-box">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2994.123456789!2d19.813000!3d41.327000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1350310000000000%3A0x0000000000000000!2sMyslym%20Shyri%2C%20Tiran%C3%AB!5e0!3m2!1sen!2s!4v1710000000000"
+                loading="lazy" title="Lokacioni i EliteGym">
+            </iframe>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <div id="footer"></div>
+
+    <!-- JS -->
+    <script src="js/contact.js"></script>
+    <script src="js/loadComponents.js"></script>
+
+</body>
+
+</html>

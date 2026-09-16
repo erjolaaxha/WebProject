@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="sq">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regjistrohu | EliteGym</title>
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/register.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <div id="navbar"></div>
+
+    <section class="register-section">
+        <div class="register-container">
+
+            <!-- LEFT SIDE -->
+            <div class="register-left">
+                <h1>Bëhu pjesë e EliteGym</h1>
+                <p>Regjistrohu sot dhe fillo transformimin tënd me trajnerët më të mirë dhe pajisjet moderne.</p>
+                <ul class="reg-perks">
+                    <li><i class="fa-solid fa-check"></i> Qasje e plotë në palestër</li>
+                    <li><i class="fa-solid fa-check"></i> Rezervo klasa online</li>
+                    <li><i class="fa-solid fa-check"></i> Gjurmo matjet e tua</li>
+                    <li><i class="fa-solid fa-check"></i> Personal Trainer në dispozicion</li>
+                    <li><i class="fa-solid fa-check"></i> Ngarko rezultatet e analizave</li>
+                </ul>
+                <div class="required-legend">
+                    <span class="required">*</span> Fusha të detyrueshme
+                </div>
+            </div>
+
+            <!-- RIGTH SIDE -->
+            <div class="register-right">
+                <h2>Regjistrohu</h2>
+
+                <form action="register.php" method="POST" id="registerForm" novalidate enctype="multipart/form-data">
+
+                    <!-- SEKSIONI: TË DHENAT PERSONAL -->
+                    <div class="form-section-title">
+                        <i class="fa-solid fa-user"></i> Të dhënat personale
+                    </div>
+
+                    <div class="input-row">
+                        <!-- Emri -->
+                        <div class="input-col">
+                            <label for="emri">Emri <span class="required" title="Fushë e detyrueshme">*</span></label>
+                            <div class="input-box">
+                                <i class="fa-solid fa-user"></i>
+                                <input type="text" id="emri" name="emri" placeholder="p.sh. Andi" tabindex="1"
+                                    autocomplete="given-name" autofocus aria-describedby="emriError"
+                                    title="Vendosni emrin tuaj (vetëm shkronja)" required>
+                            </div>
+                            <p class="error" id="emriError" role="alert"></p>
+                        </div>
+
+                        <!-- Mbiemri -->
+                        <div class="input-col">
+                            <label for="mbiemri">Mbiemri <span class="required"
+                                    title="Fushë e detyrueshme">*</span></label>
+                            <div class="input-box">
+                                <i class="fa-solid fa-user"></i>
+                                <input type="text" id="mbiemri" name="mbiemri" placeholder="p.sh. Kelmendi" tabindex="2"
+                                    autocomplete="family-name" aria-describedby="mbiemriError"
+                                    title="Vendosni mbiemrin tuaj (vetëm shkronja)" required>
+                            </div>
+                            <p class="error" id="mbiemriError" role="alert"></p>
+                        </div>
+                    </div>
+
+                    <div class="input-row">
+                        <!-- Datelindja -->
+                        <div class="input-col">
+                            <label for="datelindja">Datëlindja <span class="required"
+                                    title="Fushë e detyrueshme">*</span></label>
+                            <div class="input-box">
+                                <i class="fa-solid fa-cake-candles"></i>
+                                <input type="date" id="datelindja" name="datelindja" tabindex="3" autocomplete="bday"
+                                    aria-describedby="datelindjaError" title="Duhet të jesh të paktën 14 vjeç" required>
+                            </div>
+                            <p class="error" id="datelindjaError" role="alert"></p>
+                        </div>
+
+                        <!-- Gjinia (select - kriter 5: duhet zgjedhur element nga lista) -->
+                        <div class="input-col">
+                            <label for="gjinia">Gjinia <span class="required"
+                                    title="Fushë e detyrueshme">*</span></label>
+                            <div class="input-box">
+                                <i class="fa-solid fa-venus-mars"></i>
+                                <select id="gjinia" name="gjinia" tabindex="4" aria-describedby="gjiniaError"
+                                    title="Zgjidhni gjininë tuaj" required>
+                                    <option value="">— Zgjidh gjininë —</option>
+                                    <option value="Mashkull">Mashkull</option>
+                                    <option value="Femer">Femër</option>
+                                    <option value="Tjeter">Tjetër</option>
+                                </select>
+                            </div>
+                            <p class="error" id="gjiniaError" role="alert"></p>
+                        </div>
+                    </div>
+
+                    <!-- SEKSIONI: KONTAKTI -->
+                    <div class="form-section-title">
+                        <i class="fa-solid fa-envelope"></i> Kontakti
+                    </div>
+
+                    <!-- Email (kriter 7: @ dhe . validim) -->
+                    <label for="email">Email <span class="required" title="Fushë e detyrueshme">*</span></label>
+                    <div class="input-box">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="email" id="email" name="email" placeholder="p.sh. emri@domain.com" tabindex="5"
+                            autocomplete="email" aria-describedby="emailError"
+                            title="Formati: emri@domain.com — duhet të ketë @ dhe . me min. 2 karaktere pas pikës"
+                            required>
+                    </div>
+                    <p class="error" id="emailError" role="alert"></p>
+
+                    <!-- Nr. Telefoni (kriter 6: format XXX-XXXXXXX) -->
+                    <label for="phone">Nr. Celulari <span class="required" title="Fushë e detyrueshme">*</span></label>
+                    <div class="input-box">
+                        <i class="fa-solid fa-phone"></i>
+                        <input type="tel" id="phone" name="phone" placeholder="069-1234567" tabindex="6"
+                            autocomplete="tel" pattern="[0-9]{3}-[0-9]{7}" maxlength="11"
+                            aria-describedby="phoneError phoneHint"
+                            title="Formati i kërkuar: XXX-XXXXXXX (p.sh. 069-1234567)" required>
+                    </div>
+                    <p class="hint" id="phoneHint"><i class="fa-solid fa-circle-info"></i> Formati: XXX-XXXXXXX (p.sh.
+                        069-1234567)</p>
+                    <p class="error" id="phoneError" role="alert"></p>
+
+                    <!-- SEKSIONI: ADRESA -->
+                    <div class="form-section-title">
+                        <i class="fa-solid fa-location-dot"></i> Adresa
+                    </div>
+
+                    <label for="rruga">
+                        Rruga <span class="required">*</span>
+                    </label>
+                    <div class="input-box">
+                        <i class="fa-solid fa-road"></i>
+                        <input type="text" id="rruga" name="rruga" placeholder="p.sh. Rruga e Kavajës, nr. 12"
+                            tabindex="7" autocomplete="address-line1" title="Vendosni rrugën dhe numrin e ndërtesës"
+                            required aria-describedby="rrugaError">
+                    </div>
+                    <p class="error" id="rrugaError" role="alert"></p>
+
+                    <div class="input-row" style="margin-top:10px;">
+                        <div class="input-col">
+                            <label for="qyteti">
+                                Qyteti <span class="required">*</span>
+                            </label>
+                            <div class="input-box">
+                                <i class="fa-solid fa-city"></i>
+                                <input type="text" id="qyteti" name="qyteti" placeholder="p.sh. Tiranë" tabindex="8"
+                                    autocomplete="address-level2" title="Vendosni qytetin tuaj" required
+                                    aria-describedby="qytetiError">
+                            </div>
+                        </div>
+                    </div>
+                    <p class="error" id="qytetiError" role="alert"></p>
+
+                    <!-- SEKSIONI: INTERESAT (checkbox - kriter 3) -->
+                    <div class="form-section-title">
+                        <i class="fa-solid fa-heart-pulse"></i> Interesat / Aktivitetet
+                        <span class="required" title="Fushë e detyrueshme">*</span>
+                    </div>
+                    <p class="hint"><i class="fa-solid fa-circle-info"></i> Zgjidhni të paktën një aktivitet</p>
+
+                    <div class="checkbox-group" id="aktivitetetGroup" role="group" aria-labelledby="aktivitetetLabel">
+                        <!-- Kriter 8: vektoret (array) per checkbox -->
+                        <label class="checkbox-label" tabindex="9">
+                            <input type="checkbox" name="aktivitetet[]" value="Bodybuilding">
+                            <span class="checkbox-custom"></span>
+                            <i class="fa-solid fa-dumbbell"></i> Bodybuilding
+                        </label>
+                        <label class="checkbox-label" tabindex="10">
+                            <input type="checkbox" name="aktivitetet[]" value="Kardio">
+                            <span class="checkbox-custom"></span>
+                            <i class="fa-solid fa-running"></i> Kardio
+                        </label>
+                        <label class="checkbox-label" tabindex="11">
+                            <input type="checkbox" name="aktivitetet[]" value="Yoga">
+                            <span class="checkbox-custom"></span>
+                            <i class="fa-solid fa-spa"></i> Yoga
+                        </label>
+                        <label class="checkbox-label" tabindex="12">
+                            <input type="checkbox" name="aktivitetet[]" value="CrossFit">
+                            <span class="checkbox-custom"></span>
+                            <i class="fa-solid fa-fire"></i> CrossFit
+                        </label>
+                        <label class="checkbox-label" tabindex="13">
+                            <input type="checkbox" name="aktivitetet[]" value="Boks">
+                            <span class="checkbox-custom"></span>
+                            <i class="fa-solid fa-hand-fist"></i> Boks
+                        </label>
+                        <label class="checkbox-label" tabindex="14">
+                            <input type="checkbox" name="aktivitetet[]" value="Noto">
+                            <span class="checkbox-custom"></span>
+                            <i class="fa-solid fa-person-swimming"></i> Noto
+                        </label>
+                    </div>
+                    <p class="error" id="aktivitetetError" role="alert"></p>
+
+                    <!-- SEKSIONI: SIGURIA -->
+                    <div class="form-section-title">
+                        <i class="fa-solid fa-lock"></i> Siguria
+                    </div>
+
+                    <!-- Password (kriter 4: validim krahasimi) -->
+                    <label for="password">Fjalëkalimi <span class="required"
+                            title="Fushë e detyrueshme">*</span></label>
+                    <div class="input-box">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" id="password" name="password"
+                            placeholder="Min 8 karaktere, 1 shkronjë e madhe, 1 numër" tabindex="15"
+                            autocomplete="new-password" aria-describedby="passwordError passwordHint"
+                            title="Minimumi 8 karaktere, të paktën 1 shkronjë e madhe dhe 1 numër" required>
+                        <button type="button" class="toggle-password" data-target="password" tabindex="16"
+                            aria-label="Shfaq/fshih fjalëkalimin">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                    </div>
+                    <p class="hint" id="passwordHint"><i class="fa-solid fa-circle-info"></i> Min. 8 karaktere, 1
+                        shkronjë e madhe (A-Z), 1 numër (0-9)</p>
+
+                    <!-- Strength Bar -->
+                    <div class="strength-bar-wrap" id="strengthWrap" style="display:none;">
+                        <div class="strength-bar" id="strengthBar"></div>
+                    </div>
+                    <p class="strength-label" id="strengthLabel"></p>
+
+                    <p class="error" id="passwordError" role="alert"></p>
+
+                    <!-- Konfirmo Password (kriter 4) -->
+                    <label for="confirmPassword">Konfirmo fjalëkalimin <span class="required"
+                            title="Fushë e detyrueshme">*</span></label>
+                    <div class="input-box">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" id="confirmPassword" name="confirmPassword"
+                            placeholder="Ripërsërit fjalëkalimin" tabindex="17" autocomplete="new-password"
+                            aria-describedby="confirmPasswordError"
+                            title="Fjalëkalimi duhet të përputhet me atë të mësipërm" required>
+                        <button type="button" class="toggle-password" data-target="confirmPassword" tabindex="18"
+                            aria-label="Shfaq/fshih konfirmimin">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                    </div>
+                    <p class="error" id="confirmPasswordError" role="alert"></p>
+
+                    <!-- SEKSIONI: ABONIMI (select - kriter 5) -->
+                    <div class="form-section-title">
+                        <i class="fa-solid fa-id-card"></i> Abonimi
+                    </div>
+
+                    <label for="package">Paketa <span class="required" title="Fushë e detyrueshme">*</span></label>
+                    <div class="input-box">
+                        <i class="fa-solid fa-dumbbell"></i>
+                        <select id="package" name="package" tabindex="19" aria-describedby="packageError"
+                            title="Zgjidhni paketën tuaj të abonimit" required>
+                            <option value="">— Zgjidh paketën —</option>
+                            <option value="Start - 1 Muaj"> Start — 1 Muaj (29€)</option>
+                            <option value="Klasik - 3 Muaj"> Klasik — 3 Muaj (75€)</option>
+                            <option value="Pro - 6 Muaj"> Pro — 6 Muaj (139€)</option>
+                            <option value="Elite - 1 Vit"> Elite — 1 Vit (249€)</option>
+                        </select>
+                    </div>
+                    <p class="error" id="packageError" role="alert"></p>
+
+                    <!-- SEKSIONI: REZULTATE ANALIZASH (Drag & Drop) -->
+                    <div class="form-section-title">
+                        <i class="fa-solid fa-file-medical"></i> Rezultate Analizash Shëndetësore
+                    </div>
+                    <p class="hint"><i class="fa-solid fa-circle-info"></i> Ngarko rezultatet e analizave (PDF, JPG, PNG
+                        — max 10 MB). Zvarrit skedarin ose klikoni.</p>
+
+                    <!-- Drop zone (kriter 12: drag & drop me W3C File API) -->
+                    <div class="drop-zone" id="dropZone" tabindex="20">
+
+                        <label for="fileInput" class="drop-zone-label">
+
+                            <i class="fa-solid fa-cloud-arrow-up drop-icon" id="dropIcon"></i>
+
+                            <span id="dropText">
+                                Zvarrit skedarin këtu <strong>ose klikoni për ta zgjedhur</strong>
+                            </span>
+
+                            <span class="hint" id="dropZoneStatus">
+                                Formatet e pranuara: PDF, JPG, PNG — Madhësia max: 10 MB
+                            </span>
+
+                        </label>
+
+                        <input type="file" id="fileInput" name="analiza_file" accept=".pdf,.jpg,.jpeg,.png" hidden
+                            required>
+
+                    </div>
+
+                    <!-- Preview i skedarit -->
+                    <div id="filePreview" class="file-preview" style="display:none;">
+                        <div class="file-preview-inner">
+                            <i class="fa-solid fa-file-circle-check file-preview-icon" id="previewIcon"></i>
+                            <div class="file-preview-info">
+                                <p id="fileName" class="file-name"></p>
+                                <p id="fileSize" class="file-size"></p>
+                            </div>
+                            <button type="button" id="removeFile" class="remove-file" aria-label="Hiq skedarin">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                        </div>
+                        <!-- Progress Bar-->
+                        <div class="upload-progress-wrap" id="uploadProgressWrap" style="display:none;">
+                            <div class="upload-progress-bar" id="uploadProgressBar"></div>
+                        </div>
+                        <p class="hint" id="uploadProgressText"></p>
+                    </div>
+                    <p class="error" id="fileError" role="alert"></p>
+
+                    <!-- BUTONAT -->
+                    <div class="form-buttons">
+                        <!-- Kriter 10: buton pastrim -->
+                        <button type="button" id="btnPastro" class="btn btn-secondary" tabindex="21"
+                            title="Pastro të gjitha fushat e formularit">
+                            <i class="fa-solid fa-broom"></i> Pastro
+                        </button>
+
+                        <!-- Butoni Dergo -->
+                        <button type="submit" class="btn btn-primary" tabindex="22"
+                            title="Dërgoni formularin e regjistrimit">
+                            <i class="fa-solid fa-user-plus"></i> Regjistrohu
+                        </button>
+                    </div>
+
+                </form>
+
+                <!-- KRITER 9: DOM - shfaq informacion pas dergimit -->
+                <div id="successCard" class="success-card" style="display:none;" role="region" aria-live="polite">
+                    <!-- Mbushet dinamikisht nga JS -->
+                </div>
+
+                <p class="login-link">Ke llogari? <a href="login.html">Kyçu këtu</a></p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <div id="footer"></div>
+
+    <!-- JS -->
+    <script src="js/loadComponents.js"></script>
+    <script src="js/register.js"></script>
+
+</body>
+
+</html>

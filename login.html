@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="sq">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kyçu | EliteGym</title>
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <div id="navbar"></div>
+
+    <!-- LOGIN -->
+    <section class="login-section">
+        <div class="login-container">
+
+            <!-- LEFT SIDE WITH AN IMAGE -->
+            <div class="login-left">
+                <h1>Mirë se u ktheve!</h1>
+                <p>Kyçu në EliteGym dhe vazhdo rrugëtimin drejt objektivave të tua.</p>
+            </div>
+
+            <!--LOGIN FORM -->
+            <div class="login-right">
+                <h2>Kyçu</h2>
+
+                <form id="loginForm" novalidate>
+
+                    <label for="email">Email <span class="required">*</span></label>
+                    <div class="input-box">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="email" id="email" name="email" placeholder="Shkruaj email" tabindex="1"
+                            autocomplete="email" autofocus>
+                    </div>
+                    <p class="error" id="emailError" aria-live="polite"></p>
+
+                    <label for="password">Fjalëkalimi <span class="required">*</span></label>
+                    <div class="input-box">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" id="password" name="password" placeholder="Shkruaj fjalëkalimin"
+                            tabindex="2" autocomplete="current-password">
+
+                        <button type="button" class="toggle-password" tabindex="3" aria-label="Shfaq fjalëkalimin">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                    </div>
+
+                    <p class="error" id="passwordError" aria-live="polite"></p>
+
+                    <button type="submit" class="btn" tabindex="4" formtarget="_self">
+                        Kyçu
+                    </button>
+
+                </form>
+
+                <p class="register-link">
+                    Nuk ke llogari? <a href="register.html">Regjistrohu</a>
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <div id="footer"></div>
+
+    <!-- JS -->
+    <script src="js/loadComponents.js"></script>
+    <script src="js/login.js"></script>
+
+</body>
+
+</html>

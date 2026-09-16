@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="sq">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Dashboard | EliteGym</title>
+
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/dashboard.css" />
+    <link rel="stylesheet" href="css/widget.css" />
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <div id="navbar"></div>
+
+    <main class="dashboard-main container">
+
+        <!-- HEADER -->
+        <section class="dash-header">
+
+            <div class="dash-avatar">
+                <i class="fa-solid fa-circle-user"></i>
+            </div>
+
+            <div class="dash-info">
+                <h1 id="dashEmriPlote">—</h1>
+
+                <p id="dashEmail" class="dash-email">—</p>
+
+                <div class="dash-badges">
+                    <span id="dashGjinia" class="dash-badge gender-badge">—</span>
+                    <span id="dashMosha" class="dash-badge">— vjeç</span>
+                    <span id="dashMember" class="dash-badge">
+                        Anëtar që nga: —
+                    </span>
+                    <span id="dashPkg" class="dash-badge pkg-badge">—</span>
+                </div>
+            </div>
+
+            <div class="dash-header-actions">
+                <a href="rezervime.html" class="dash-quick-btn">
+                    <i class="fa-solid fa-calendar-plus"></i>
+                    Rezervo
+                </a>
+
+                <a href="matje.html" class="dash-quick-btn outline">
+                    <i class="fa-solid fa-ruler"></i>
+                    Matjet
+                </a>
+            </div>
+
+        </section>
+
+        <!-- STATS -->
+        <section class="dash-stats">
+            
+            <h2 class="sr-only">Statistikat e dashboard-it</h2>
+
+            <div class="dash-card">
+                <i class="fa-solid fa-box-open"></i>
+
+                <div>
+                    <p class="card-label">Paketa aktuale</p>
+                    <p class="card-value" id="dashPackage">—</p>
+                </div>
+            </div>
+
+            <div class="dash-card">
+                <i class="fa-solid fa-calendar-check"></i>
+
+                <div>
+                    <p class="card-label">Rezervime totale</p>
+                    <p class="card-value" id="dashRezCount">0</p>
+                </div>
+            </div>
+
+            <div class="dash-card">
+                <i class="fa-solid fa-ruler"></i>
+
+                <div>
+                    <p class="card-label">Matje antropometrike</p>
+                    <p class="card-value" id="dashMatjeCount">0</p>
+                </div>
+            </div>
+
+            <div class="dash-card">
+                <i class="fa-solid fa-weight-scale"></i>
+
+                <div>
+                    <p class="card-label">Pesha e fundit</p>
+                    <p class="card-value" id="dashPesha">— kg</p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ADDRESS -->
+        <div id="dashAddressBar" class="dash-address-bar" style="display:none;">
+            <i class="fa-solid fa-location-dot"></i>
+            <span id="dashAddress">—</span>
+        </div>
+
+        <!-- AKTIVITETET -->
+        <section id="dashAktivitetePanel" class="dash-panel" style="display:none;">
+
+            <div class="dash-panel-header">
+                <h2 class="dash-section-title">Aktivitetet</h2>
+            </div>
+
+            <div id="dashAktiviteteList" class="dash-badges"></div>
+
+        </section>
+
+        <!-- ANALIZAT -->
+        <section id="dashAnalizaPanel" class="dash-panel" style="display:none;">
+
+            <div class="dash-panel-header">
+                <h2 class="dash-section-title">Analizat</h2>
+            </div>
+
+            <div id="dashAnalizaBox"></div>
+
+        </section>
+
+        <!-- BOTTOM GRID -->
+        <div class="dash-bottom-grid">
+
+            <!-- REZERVIMET -->
+            <section class="dash-panel">
+
+                <div class="dash-panel-header">
+                    <h2 class="dash-section-title">
+                        Rezervimet e fundit
+                    </h2>
+
+                    <a href="rezervime.html" class="dash-see-all">
+                        Shiko të gjitha →
+                    </a>
+                </div>
+
+                <div id="dashRezList" class="dash-rez-list">
+                    <p class="no-data">
+                        Nuk ke rezervime.
+                        <a href="rezervime.html">Rezervo tani →</a>
+                    </p>
+                </div>
+
+            </section>
+
+            <!-- MATJET -->
+            <section class="dash-panel">
+
+                <div class="dash-panel-header">
+                    <h2 class="dash-section-title">
+                        Matja e fundit
+                    </h2>
+
+                    <a href="matje.html" class="dash-see-all">
+                        Historiku →
+                    </a>
+                </div>
+
+                <div id="dashMatjeBox">
+                    <p class="no-data">
+                        Nuk ke matje.
+                        <a href="matje.html">Shto tani →</a>
+                    </p>
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+    <!-- WIDGET -->
+    <div id="macroWidget" class="floating-widget collapsed">
+
+        <div class="widget-header" id="widgetHeader">
+            Macro Calculator
+        </div>
+
+        <div class="widget-body">
+
+            <input id="weight" placeholder="Weight (kg)">
+            <input id="height" placeholder="Height (cm)">
+            <input id="age" placeholder="Age">
+
+            <select id="activity">
+                <option value="1.2">Low</option>
+                <option value="1.375">Light</option>
+                <option value="1.55">Moderate</option>
+                <option value="1.725">High</option>
+            </select>
+
+            <button onclick="calcMacros()">Calculate</button>
+
+            <div id="result"></div>
+
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div id="footer"></div>
+
+    <!-- JS -->
+    <script src="js/loadComponents.js"></script>
+    <script src="js/widget.js"></script>
+    <script src="js/dashboard.js"></script>
+
+</body>
+
+</html>

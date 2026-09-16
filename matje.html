@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="sq">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matjet Antropometrike | EliteGym</title>
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/matje.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <div id="navbar"></div>
+
+    <section class="matje-hero">
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <h1>Matjet Antropometrike</h1>
+            <p>Gjurmo progresin tënd fizik në kohë reale.</p>
+        </div>
+    </section>
+
+    <main class="container matje-main">
+
+        <!-- Blloku i kycjes -->
+        <div class="matje-wall" id="matjeWall">
+            <i class="fa-solid fa-lock"></i>
+            <h2>Vetëm për anëtarë</h2>
+            <p>Kyçu për të shtuar dhe parë matjet e tua.</p>
+            <div class="wall-btns">
+                <a href="login.html" class="btn-primary">Kyçu</a>
+                <a href="register.html" class="btn-outline-c">Regjistrohu</a>
+            </div>
+        </div>
+
+        <div class="matje-content" id="matjeContent" style="display:none;">
+
+            <div class="matje-grid">
+
+                <!-- FORMA E MATJEVE -->
+                <div class="matje-form-box">
+
+                    <h2>
+                        <i class="fa-solid fa-ruler"></i>
+                        Shto matje të re
+                    </h2>
+
+                    <form id="matjeForm" name="matjeForm" action="#" method="POST" novalidate>
+
+                        <!-- DATA -->
+                        <label for="dataMatjes">
+                            Data e matjes <span class="req">*</span>
+                        </label>
+
+                        <div class="input-wrap">
+                            <i class="fa-solid fa-calendar"></i>
+
+                            <input type="date" id="dataMatjes" name="dataMatjes" required autofocus>
+                        </div>
+
+                        <p class="err" id="dataMatjesErr"></p>
+
+                        <!-- Pesha + Gjatesia -->
+                        <div class="m-row">
+
+                            <div class="m-col">
+
+                                <label for="pesha">
+                                    Pesha (kg) <span class="req">*</span>
+                                </label>
+
+                                <div class="input-wrap">
+                                    <i class="fa-solid fa-weight-scale"></i>
+
+                                    <input type="number" id="pesha" name="pesha" placeholder="p.sh. 75" step="0.1"
+                                        min="30" max="300" required>
+                                </div>
+
+                                <p class="err" id="peshaErr"></p>
+
+                            </div>
+
+                            <div class="m-col">
+
+                                <label for="gjatesia">
+                                    Gjatësia (cm) <span class="req">*</span>
+                                </label>
+
+                                <div class="input-wrap">
+                                    <i class="fa-solid fa-ruler-vertical"></i>
+
+                                    <input type="number" id="gjatesia" name="gjatesia" placeholder="p.sh. 175"
+                                        step="0.5" min="100" max="250" required>
+                                </div>
+
+                                <p class="err" id="gjatesiaErr"></p>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Yndyra + Muskujt -->
+                        <div class="m-row">
+
+                            <div class="m-col">
+
+                                <label for="yndyra">% Yndyra</label>
+
+                                <div class="input-wrap">
+                                    <i class="fa-solid fa-droplet"></i>
+
+                                    <input type="number" id="yndyra" name="yndyra" placeholder="p.sh. 18.5" step="0.1"
+                                        min="3" max="60">
+                                </div>
+
+                            </div>
+
+                            <div class="m-col">
+
+                                <label for="muskujt">
+                                    Masa Muskujve (kg)
+                                </label>
+
+                                <div class="input-wrap">
+                                    <i class="fa-solid fa-person-running"></i>
+
+                                    <input type="number" id="muskujt" name="muskujt" placeholder="p.sh. 35.0" step="0.1"
+                                        min="10" max="150">
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- BMI preview -->
+                        <div class="bmi-result-box" id="bmiPreview" style="display:none;">
+                            <span class="bmi-label">BMI i llogaritur:</span>
+                            <span class="bmi-value" id="bmiValue">—</span>
+                            <span class="bmi-cat" id="bmiCat">—</span>
+                        </div>
+
+                        <!-- Submit -->
+                        <button type="submit" class="btn-submit" formtarget="_self" name="submitMatjeBtn">
+                            <i class="fa-solid fa-plus"></i>
+                            Regjistro matjen
+                        </button>
+
+                    </form>
+
+                </div>
+
+                <!-- PANELI DJATHTAS: STATISTIKAT MOMENTALE -->
+                <div class="matje-stats-box">
+                    <h2><i class="fa-solid fa-chart-line"></i> Statistikat aktuale</h2>
+
+                    <div class="stat-cards">
+                        <div class="stat-mini-card" id="scPesha">
+                            <i class="fa-solid fa-weight-scale"></i>
+                            <div>
+                                <p class="sc-label">Pesha</p>
+                                <p class="sc-val" id="lastPesha">— kg</p>
+                            </div>
+                        </div>
+                        <div class="stat-mini-card" id="scBMI">
+                            <i class="fa-solid fa-calculator"></i>
+                            <div>
+                                <p class="sc-label">BMI</p>
+                                <p class="sc-val" id="lastBMI">—</p>
+                            </div>
+                        </div>
+                        <div class="stat-mini-card">
+                            <i class="fa-solid fa-droplet"></i>
+                            <div>
+                                <p class="sc-label">% Yndyra</p>
+                                <p class="sc-val" id="lastYndyra">— %</p>
+                            </div>
+                        </div>
+                        <div class="stat-mini-card">
+                            <i class="fa-solid fa-person-running"></i>
+                            <div>
+                                <p class="sc-label">Masa Muskujve</p>
+                                <p class="sc-val" id="lastMuskujt">— kg</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Progresi (ndryshimi nga matja e pare) -->
+                    <div class="progress-section" id="progressSection" style="display:none;">
+                        <h3>Progresi total</h3>
+                        <div class="progress-row" id="progPesha"></div>
+                        <div class="progress-row" id="progBMI"></div>
+                    </div>
+
+                    <p class="matje-count-note" id="matjeCountNote"></p>
+                </div>
+
+            </div>
+
+            <!-- HISTORIKU I MATJEVE -->
+            <div class="matje-history">
+                <h2><i class="fa-solid fa-clock-rotate-left"></i> Historiku i matjeve</h2>
+                <div id="matjeHistoryList">
+                    <p class="no-rez-msg">Nuk ke matje të regjistruara ende.</p>
+                </div>
+                <div class="chart-box">
+                    <h2><i class="fa-solid fa-chart-line"></i> Progresi yt</h2>
+                    <canvas id="matjeChart"></canvas>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <div id="footer"></div>
+
+    <!-- Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- JS -->
+    <script src="js/loadComponents.js"></script>
+    <script src="js/matje.js"></script>
+
+</body>
+
+</html>

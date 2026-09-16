@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="sq">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rezervimet | EliteGym</title>
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/rezervime.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <div id="navbar"></div>
+
+    <!-- HERO -->
+    <section class="rez-hero">
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <h1>Rezervimet</h1>
+            <p>Rezervo klasën me instruktor ose seancën personale me Personal Trainer.</p>
+        </div>
+    </section>
+
+    <main class="container rez-main">
+
+        <!-- LOGIN -->
+        <div class="rez-login-wall" id="rezLoginWall">
+            <i class="fa-solid fa-lock"></i>
+            <h2>Duhet të jesh i kyçur</h2>
+            <p>Rezervimet janë të disponueshme vetëm për anëtarët e regjistruar.</p>
+            <div class="wall-btns">
+                <a href="login.html" class="btn-primary">Kyçu</a>
+                <a href="register.html" class="btn-outline-c">Regjistrohu</a>
+            </div>
+        </div>
+
+        <!-- CONTENUTI (vetem per te loguar) -->
+        <div class="rez-content" id="rezContent" style="display:none;">
+
+            <!-- TABS -->
+            <div class="rez-tabs">
+                <button class="rez-tab active" data-tab="klasa">
+                    <i class="fa-solid fa-dumbbell"></i> Klasa me Instruktor
+                </button>
+                <button class="rez-tab" data-tab="personale">
+                    <i class="fa-solid fa-user-check"></i> Seancë Personale
+                </button>
+                <button class="rez-tab" data-tab="lista">
+                    <i class="fa-solid fa-list-check"></i> Rezervimet e mia
+                    <span class="rez-count-badge" id="rezCountBadge">0</span>
+                </button>
+            </div>
+
+            <!-- TAB 1: KLASA ME INSTRUKTOR (MERR PJESE + DREJTON) -->
+            <div class="tab-panel active" id="tab-klasa">
+                <div class="rez-grid">
+                    <div class="rez-form-box">
+                        <h2><i class="fa-solid fa-calendar-plus"></i> Rezervo klasë</h2>
+                        <p class="form-hint">Zgjedh klasën dhe instruktotin që të drejtojë seancën.</p>
+
+                        <!-- FORM: REZERVO KLASË -->
+                        <form id="rezervoKlasaForm" name="rezervoKlasaForm" action="#" method="POST" novalidate>
+
+                            <!-- Klasa -->
+                            <label for="klasa">
+                                Klasa (EmriKlases) <span class="req">*</span>
+                            </label>
+
+                            <div class="input-wrap">
+                                <i class="fa-solid fa-dumbbell"></i>
+
+                                <select id="klasa" name="klasa" required autofocus>
+                                    <option value="">— Zgjidh klasën —</option>
+                                    <option value="Cardio">Cardio</option>
+                                    <option value="Strength Training">Strength Training</option>
+                                    <option value="Boxing">Boxing</option>
+                                    <option value="Yoga">Yoga</option>
+                                    <option value="CrossFit">CrossFit</option>
+                                </select>
+                            </div>
+
+                            <p class="err" id="klasaErr"></p>
+
+                            <!-- Instruktori -->
+                            <label for="instruktor">
+                                Instruktori <span class="req">*</span>
+                            </label>
+
+                            <div class="input-wrap">
+                                <i class="fa-solid fa-chalkboard-user"></i>
+
+                                <select id="instruktor" name="instruktor" required>
+                                    <option value="">— Zgjidh instruktotin —</option>
+                                    <option value="Arben Musa (Cardio, CrossFit)">
+                                        Arben Musa — Cardio, CrossFit
+                                    </option>
+
+                                    <option value="Drita Hoxha (Yoga, Pilates)">
+                                        Drita Hoxha — Yoga, Pilates
+                                    </option>
+
+                                    <option value="Blerim Kola (Boxing, MMA)">
+                                        Blerim Kola — Boxing, MMA
+                                    </option>
+
+                                    <option value="Sara Leka (Yoga, Zumba)">
+                                        Sara Leka — Yoga, Zumba
+                                    </option>
+
+                                    <option value="Genti Vrapi (Strength, CrossFit)">
+                                        Genti Vrapi — Strength, CrossFit
+                                    </option>
+
+                                    <option value="Ana Çela (Cardio, Dance)">
+                                        Ana Çela — Cardio, Dance
+                                    </option>
+                                </select>
+                            </div>
+
+                            <p class="err" id="instruktorErr"></p>
+
+                            <!-- Data -->
+                            <label for="dataKlasa">
+                                Data <span class="req">*</span>
+                            </label>
+
+                            <div class="input-wrap">
+                                <i class="fa-solid fa-calendar"></i>
+
+                                <input type="date" id="dataKlasa" name="dataKlasa" required>
+                            </div>
+
+                            <p class="err" id="dataKlasaErr"></p>
+
+                            <!-- Ora -->
+                            <label for="oraKlasa">
+                                Ora (Orari) <span class="req">*</span>
+                            </label>
+
+                            <div class="input-wrap">
+                                <i class="fa-solid fa-clock"></i>
+
+                                <select id="oraKlasa" name="oraKlasa" required>
+                                    <option value="">— Zgjidh orën —</option>
+                                    <option value="07:00 - 08:00">07:00 – 08:00 (Salla A)</option>
+                                    <option value="09:00 - 10:00">09:00 – 10:00 (Salla B)</option>
+                                    <option value="11:00 - 12:00">11:00 – 12:00 (Salla A)</option>
+                                    <option value="14:00 - 15:00">14:00 – 15:00 (Salla C)</option>
+                                    <option value="16:00 - 17:00">16:00 – 17:00 (Salla B)</option>
+                                    <option value="18:00 - 19:00">18:00 – 19:00 (Salla A)</option>
+                                    <option value="20:00 - 21:00">20:00 – 21:00 (Salla C)</option>
+                                </select>
+                            </div>
+
+                            <p class="err" id="oraKlasaErr"></p>
+
+                            <!-- Submit -->
+                            <button type="submit" class="btn-submit" formtarget="_self" name="confirmKlasaBtn">
+                                <i class="fa-solid fa-check"></i>
+                                Konfirmo rezervimin
+                            </button>
+
+                        </form>
+                    </div>
+
+                    <!-- Info box klasat -->
+                    <div class="rez-info-box">
+                        <h3><i class="fa-solid fa-circle-info"></i> Informacion rreth klasave</h3>
+                        <div class="class-info-list">
+                            <div class="class-info-item">
+                                <span class="ci-name">Cardio</span>
+                                <span class="ci-detail">Kohëzgjatja: 60 min · Kapaciteti: 20</span>
+                            </div>
+                            <div class="class-info-item">
+                                <span class="ci-name">Strength Training</span>
+                                <span class="ci-detail">Kohëzgjatja: 75 min · Kapaciteti: 15</span>
+                            </div>
+                            <div class="class-info-item">
+                                <span class="ci-name">Boxing</span>
+                                <span class="ci-detail">Kohëzgjatja: 60 min · Kapaciteti: 12</span>
+                            </div>
+                            <div class="class-info-item">
+                                <span class="ci-name">Yoga</span>
+                                <span class="ci-detail">Kohëzgjatja: 90 min · Kapaciteti: 25</span>
+                            </div>
+                            <div class="class-info-item">
+                                <span class="ci-name">CrossFit</span>
+                                <span class="ci-detail">Kohëzgjatja: 60 min · Kapaciteti: 18</span>
+                            </div>
+                        </div>
+                        <p class="info-note">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                            Anulimi duhet bërë të paktën 2 orë para seancës.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 2: SEANCE PERSONALE -->
+            <div class="tab-panel" id="tab-personale">
+                <div class="rez-grid">
+                    <div class="rez-form-box">
+                        <h2><i class="fa-solid fa-user-tie"></i> Rezervo seancë personale</h2>
+                        <p class="form-hint">Seanca personale me Personal Trainer është e personalizuar për qëllimet
+                            tua.</p>
+
+                        <!-- FORM: SEANCE PERSONALE -->
+                        <form id="rezervoPersonaleForm" name="rezervoPersonaleForm" action="#" method="POST" novalidate>
+
+                            <!-- Personal Trainer -->
+                            <label for="personalTrainer">
+                                Personal Trainer <span class="req">*</span>
+                            </label>
+
+                            <div class="input-wrap">
+                                <i class="fa-solid fa-user-check"></i>
+
+                                <select id="personalTrainer" name="personalTrainer" required>
+                                    <option value="">— Zgjidh trainerin —</option>
+
+                                    <option value="Klajdi Berisha (Bodybuilding, Nutrition)">
+                                        Klajdi Berisha — Bodybuilding, Nutrition
+                                    </option>
+
+                                    <option value="Mirela Daka (Weight Loss, Cardio)">
+                                        Mirela Daka — Weight Loss, Cardio
+                                    </option>
+
+                                    <option value="Ergys Hyseni (CrossFit, Strength)">
+                                        Ergys Hyseni — CrossFit, Strength
+                                    </option>
+
+                                    <option value="Olta Gjoka (Yoga, Flexibility)">
+                                        Olta Gjoka — Yoga, Flexibility
+                                    </option>
+                                </select>
+                            </div>
+
+                            <p class="err" id="ptErr"></p>
+
+                            <!-- Data -->
+                            <label for="dataPersonale">
+                                Data <span class="req">*</span>
+                            </label>
+
+                            <div class="input-wrap">
+                                <i class="fa-solid fa-calendar"></i>
+
+                                <input type="date" id="dataPersonale" name="dataPersonale" required>
+                            </div>
+
+                            <p class="err" id="dataPersonaleErr"></p>
+
+                            <!-- Ora -->
+                            <label for="oraPersonale">
+                                Ora <span class="req">*</span>
+                            </label>
+
+                            <div class="input-wrap">
+                                <i class="fa-solid fa-clock"></i>
+
+                                <select id="oraPersonale" name="oraPersonale" required>
+                                    <option value="">— Zgjidh orën —</option>
+                                    <option value="08:00">08:00</option>
+                                    <option value="10:00">10:00</option>
+                                    <option value="12:00">12:00</option>
+                                    <option value="15:00">15:00</option>
+                                    <option value="17:00">17:00</option>
+                                    <option value="19:00">19:00</option>
+                                </select>
+                            </div>
+
+                            <p class="err" id="oraPersonaleErr"></p>
+
+                            <!-- Kohezgjatja -->
+                            <label for="kohezgjatjaPersonale">
+                                Kohëzgjatja <span class="req">*</span>
+                            </label>
+
+                            <div class="input-wrap">
+                                <i class="fa-solid fa-hourglass-half"></i>
+
+                                <select id="kohezgjatjaPersonale" name="kohezgjatjaPersonale" required>
+                                    <option value="">— Zgjidh —</option>
+                                    <option value="30 min">30 minuta</option>
+                                    <option value="60 min">60 minuta</option>
+                                    <option value="90 min">90 minuta</option>
+                                </select>
+                            </div>
+
+                            <p class="err" id="kohezgjatjaPersonaleErr"></p>
+
+                            <!-- Submit -->
+                            <button type="submit" class="btn-submit btn-pt" formtarget="_self"
+                                name="confirmPersonalBtn">
+                                <i class="fa-solid fa-check"></i>
+                                Konfirmo seancën personale
+                            </button>
+
+                        </form>
+                    </div>
+
+                    <!-- Info Personal Trainers -->
+                    <div class="rez-info-box">
+                        <h3><i class="fa-solid fa-star"></i> Personal Trainers</h3>
+                        <div class="pt-list">
+                            <div class="pt-card">
+                                <i class="fa-solid fa-circle-user pt-icon"></i>
+                                <div>
+                                    <strong>Klajdi Berisha</strong>
+                                    <span>Bodybuilding · Nutrition</span>
+                                    <span class="pt-cert">✓ Certifikuar NASM</span>
+                                </div>
+                            </div>
+                            <div class="pt-card">
+                                <i class="fa-solid fa-circle-user pt-icon"></i>
+                                <div>
+                                    <strong>Mirela Daka</strong>
+                                    <span>Weight Loss · Cardio</span>
+                                    <span class="pt-cert">✓ Certifikuar ACE</span>
+                                </div>
+                            </div>
+                            <div class="pt-card">
+                                <i class="fa-solid fa-circle-user pt-icon"></i>
+                                <div>
+                                    <strong>Ergys Hyseni</strong>
+                                    <span>CrossFit · Strength</span>
+                                    <span class="pt-cert">✓ Certifikuar CrossFit L2</span>
+                                </div>
+                            </div>
+                            <div class="pt-card">
+                                <i class="fa-solid fa-circle-user pt-icon"></i>
+                                <div>
+                                    <strong>Olta Gjoka</strong>
+                                    <span>Yoga · Flexibility</span>
+                                    <span class="pt-cert">✓ Certifikuar RYT-200</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 3: LISTA E REZERVIMEVE -->
+            <div class="tab-panel" id="tab-lista">
+                <div class="rez-list-full">
+                    <h2><i class="fa-solid fa-list-check"></i> Të gjitha rezervimet e mia</h2>
+                    <div id="allRezList">
+                        <p class="no-rez-msg">Nuk ke rezervime ende.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- /rez-content -->
+
+    </main>
+
+    <!-- Popup konfirmimi -->
+    <div class="rez-popup" id="rezPopup">
+        <div class="popup-box">
+            <i class="fa-solid fa-circle-check"></i>
+            <h3 id="popupTitle">Rezervimi u konfirmua!</h3>
+            <p id="popupDetails"></p>
+            <button onclick="document.getElementById('rezPopup').classList.remove('active')">
+                Mbyll
+            </button>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div id="footer"></div>
+
+    <!-- FAVICON -->
+    <script src="js/loadComponents.js"></script>
+    <script src="js/rezervime.js"></script>
+
+</body>
+
+</html>

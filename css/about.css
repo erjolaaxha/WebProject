@@ -1,0 +1,342 @@
+@font-face {
+    font-family: "Montserrat Black";
+    src: url("../fonts/static/Montserrat-Black.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Montserrat Medium";
+    src: url("../fonts/static/Montserrat-Medium.ttf") format("truetype");
+}
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h3+p {
+    margin-top: 15px;
+    color: #ccc;
+    font-family: Arial, sans-serif;
+}
+
+/* BODY */
+body {
+    font-family: "Montserrat Black", sans-serif;
+    background: #111;
+    color: white;
+    line-height: 1.7;
+}
+
+/* CONTAINER */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* IMAGES */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* HERO */
+.about-hero {
+    height: 70vh;
+
+    background: url('../images/about-bg.jpg') center/cover;
+
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: 70px;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 20px;
+    color: #ddd;
+}
+
+/* ABOUT */
+.about-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 70px;
+
+    align-items: center;
+
+    padding: 100px 0;
+}
+
+/* IMAGES GRID */
+.about-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.about-images img {
+    width: 100%;
+    height: 220px;
+
+    object-fit: cover;
+
+    border-radius: 20px;
+
+    transition: 0.4s;
+}
+
+.about-images img:first-child {
+    grid-column: 1 / 3;
+    height: 320px;
+}
+
+.about-images img:hover {
+    transform: scale(1.03);
+}
+
+/* TEXT */
+.about-text h2 {
+    font-size: 42px;
+    color: rgb(0, 188, 212);
+
+    margin-bottom: 25px;
+}
+
+.about-text p {
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+/* TITLES */
+.section-title {
+    text-align: center;
+
+    margin-bottom: 60px;
+
+    color: rgb(0, 188, 212);
+
+    font-size: 40px;
+}
+
+/* FEATURES */
+.features {
+    padding-bottom: 100px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 30px;
+}
+
+/* FEATURE CARD */
+.feature-card {
+    background: #1a1a1a;
+
+    padding: 40px 30px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    transition: 0.4s;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+
+    box-shadow: 0 0 25px rgba(0, 188, 212, 0.3);
+}
+
+.feature-card i {
+    font-size: 50px;
+    color: rgb(0, 188, 212);
+
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+.feature-card p {
+    color: #ccc;
+}
+
+/* TEAM */
+.team {
+    padding-bottom: 100px;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 30px;
+}
+
+/* TRAINER CARD */
+.trainer-card {
+    background: #1a1a1a;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    transition: 0.4s;
+}
+
+.trainer-card:hover {
+    transform: translateY(-10px);
+
+    box-shadow: 0 0 25px rgba(0, 188, 212, 0.3);
+}
+
+/* IMAGE */
+.trainer-image {
+    overflow: hidden;
+}
+
+.trainer-image img {
+    width: 100%;
+    height: 330px;
+
+    object-fit: cover;
+
+    transition: 0.5s;
+}
+
+.trainer-card:hover img {
+    transform: scale(1.08);
+}
+
+/* CONTENT */
+.trainer-content {
+    padding: 25px;
+    text-align: center;
+}
+
+.trainer-content h3 {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.trainer-content span {
+    color: rgb(0, 188, 212);
+
+    display: block;
+
+    margin-bottom: 15px;
+}
+
+/* STARS */
+.trainer-rating {
+    color: gold;
+    letter-spacing: 3px;
+    font-size: 18px;
+}
+
+/* BUTTON */
+.team-button {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 60px;
+}
+
+.view-trainers-btn {
+    display: inline-block;
+
+    padding: 16px 40px;
+
+    background: rgb(0, 188, 212);
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 12px;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    transition: 0.4s;
+}
+
+.view-trainers-btn:hover {
+    background: rgb(0, 150, 170);
+
+    transform: translateY(-5px);
+
+    box-shadow: 0 0 20px rgba(0, 188, 212, 0.5);
+}
+
+/* TABLET */
+@media(max-width:900px) {
+
+    .about-section {
+        grid-template-columns: 1fr;
+    }
+
+    .features-grid,
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-content h1 {
+        font-size: 55px;
+    }
+
+}
+
+/* MOBILE */
+@media(max-width:600px) {
+
+    .hero-content h1 {
+        font-size: 40px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    .about-text h2 {
+        font-size: 30px;
+    }
+
+    .section-title {
+        font-size: 30px;
+    }
+
+    .features-grid,
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
